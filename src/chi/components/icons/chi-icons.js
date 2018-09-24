@@ -1,4 +1,3 @@
-
 (function () {
   "use strict";
 
@@ -9,10 +8,10 @@
   const regExIconType = /[\^\s](icon-[^\s]+)/;
   var pendingPerforms = [];
 
-  var performIconLoad = function(target) {
+  var performIconLoad = function (target) {
     var matches = regExIconType.exec(target.className);
     if (matches !== null && target.getAttribute('data-icon') !== matches[1]) {
-      var id=matches[1];
+      var id = matches[1];
       var SVG_NS = 'http://www.w3.org/2000/svg';
       var XLink_NS = 'http://www.w3.org/1999/xlink';
       var svgDoc = document.createElementNS(SVG_NS, 'svg');
@@ -25,13 +24,13 @@
     }
   };
 
-  var performAllPendingChanges = function() {
+  var performAllPendingChanges = function () {
     if (pendingPerforms.length > 0) {
       var frame = window.requestAnimationFrame || function (op) {
         op();
       };
       frame(function () {
-        pendingPerforms.map(function(target){
+        pendingPerforms.map(function (target) {
           performIconLoad(target);
         });
         pendingPerforms.length = 0;
@@ -39,19 +38,17 @@
     }
   };
 
-  var findAndLoadIcons = function(node) {
-
+  var findAndLoadIcons = function (node) {
     if (regExIconClass.test(node.className)) {
       var matches = regExIconType.exec(node.className);
       if (matches !== null && node.getAttribute('data-icon') !== matches[1]) {
         pendingPerforms.push(node);
       }
-    } else if(typeof node.getElementsByClassName === 'function') {
-      Array.prototype.forEach.call(node.getElementsByClassName(iconClass), function(element) {
+    } else if (typeof node.getElementsByClassName === 'function') {
+      Array.prototype.forEach.call(node.getElementsByClassName(iconClass), function (element) {
         findAndLoadIcons(element);
       });
     }
-
   };
 
   var includeSvgSpriteInDom = function () {
@@ -63,45 +60,31 @@
     document.body.appendChild(shadowSVG);
   };
 
-  var observeDomMutations = function() {
-
+  var observeDomMutations = function () {
     var target = document.body;
-
-    var observer = new MutationObserver(function(mutations) {
-      mutations.forEach(function(mutation) {
-
-
+    var observer = new MutationObserver(function (mutations) {
+      mutations.forEach(function (mutation) {
         if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
-
-          Array.prototype.forEach.call(mutation.addedNodes, function(element) {
+          Array.prototype.forEach.call(mutation.addedNodes, function (element) {
             findAndLoadIcons(element);
           });
           performAllPendingChanges();
         }
-
         if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
           findAndLoadIcons(mutation.target);
           performAllPendingChanges();
         }
-
       });
     });
-
-    var config = { childList: true, attributes: true, characterData: false, subtree: true };
-
+    var config = {childList: true, attributes: true, characterData: false, subtree: true};
     observer.observe(target, config);
-
-
-
   };
 
-  document.addEventListener("DOMContentLoaded", function() {
+  document.addEventListener("DOMContentLoaded", function () {
     includeSvgSpriteInDom();
-
     findAndLoadIcons(document);
     performAllPendingChanges();
     observeDomMutations();
   });
-
 
 })();
