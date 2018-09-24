@@ -20,6 +20,7 @@
     "babel-cli": "6.26.0",
     "babel-core": "6.26.0",
     "babel-preset-env": "1.6.0",
+    "babel-plugin-transform-custom-element-classes": "0.1.0",
     "cssnano": "3.10.0",
     "del": "3.0.0",
     "event-stream": "3.3.4",
@@ -42,7 +43,8 @@
     "require-dir": "0.3.2",
     "run-sequence": "2.2.0",
     "sass-lint": "1.12.1",
-    "yargs": "9.0.1"
+    "yargs": "9.0.1",
+    "@webcomponents/webcomponentsjs": "2.1.2"
   },
   "devDependencies": {
     "babel-loader": "7.1.2",

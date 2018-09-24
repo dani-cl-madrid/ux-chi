@@ -15,20 +15,26 @@ mixin input(style, state, size, disabled)
   )
 
 mixin icon(name)
-  .a-icon(class={
-    [`-text${name}`]: ['success', 'warning', 'danger'].indexOf(name) != -1
-  })
-    svg
-      if name == 'success'
-        use(xlink:href='#icon-check')
-      else if name == 'warning'
-        use(xlink:href='#icon-warning')
-      else if name == 'danger'
-        use(xlink:href='#icon-circle-warning')
-      else if name == 'default'
-        use(xlink:href='#icon-circle-info-outline')
-      else
-        use(xlink:href=`#icon-${name}`)
+  if name == 'success'
+    chi-icon(img='check')(class={
+      [`-text${name}`]: ['success', 'warning', 'danger'].indexOf(name) != -1
+    })
+  else if name == 'warning'
+    chi-icon(img='warning')(class={
+      [`-text${name}`]: ['success', 'warning', 'danger'].indexOf(name) != -1
+    })
+  else if name == 'danger'
+    chi-icon(img='circle-warning')(class={
+      [`-text${name}`]: ['success', 'warning', 'danger'].indexOf(name) != -1
+    })
+  else if name == 'default'
+    chi-icon(img='circle-info-outline')(class={
+      [`-text${name}`]: ['success', 'warning', 'danger'].indexOf(name) != -1
+    })
+  else
+    chi-icon(img=`${name}`)(class={
+      [`-text${name}`]: ['success', 'warning', 'danger'].indexOf(name) != -1
+    })
 
 each size in ['default', 'small', 'large']
   div(class=`test-${size}`)
@@ -70,21 +76,13 @@ each size in ['default', 'small', 'large']
                 .a-inputWrapper.-iconRight
                   +input(style, state, size, disabled)
                   if style == 'success'
-                    .a-icon.-textSuccess
-                      svg
-                        use(xlink:href='#icon-check')
+                    chi-icon(img='check').-textSuccess
                   else if style == 'warning'
-                    .a-icon.-textWarning
-                      svg
-                        use(xlink:href='#icon-warning')
+                    chi-icon(img='warning').-textWarning
                   else if style == 'danger'
-                    .a-icon.-textDanger
-                      svg
-                        use(xlink:href='#icon-circle-warning')
+                    chi-icon(img='circle-warning').-textDanger
                   else
-                    .a-icon
-                      svg
-                        use(xlink:href='#icon-circle-info-outline')
+                    chi-icon(img='circle-info-outline')
 
   div(class=`test-${size}-icon-left-right`)
     span.a-h2= `Text Input / ${size} / icon left / icon right`
@@ -100,18 +98,10 @@ each size in ['default', 'small', 'large']
                   +input(style, state, size, disabled)
                   +icon('atom')
                   if style == 'success'
-                    .a-icon.-textSuccess
-                      svg
-                        use(xlink:href='#icon-check')
+                    chi-icon(img='check').-textSuccess
                   else if style == 'warning'
-                    .a-icon.-textWarning
-                      svg
-                        use(xlink:href='#icon-warning')
+                    chi-icon(img='warning').-textWarning
                   else if style == 'danger'
-                    .a-icon.-textDanger
-                      svg
-                        use(xlink:href='#icon-circle-warning')
+                    chi-icon(img='circle-warning').-textDanger
                   else
-                    .a-icon
-                      svg
-                        use(xlink:href='#icon-circle-info-outline')
+                    chi-icon(img='circle-info-outline')

@@ -26,7 +26,10 @@ html(lang="en")
                 != contents
 
       script(src=`${rootPath}assets/scripts/chi-docs.js`)
-      script(src=`${rootPath}chi-icons.js`)
+      script(src=`${rootPath}assets/scripts/import-babel-polyfill.js`)
+      script(src=`${rootPath}assets/scripts/webcomponents-bundle.js`)
+      script(src=`${rootPath}assets/scripts/custom-elements-es5-adapter.js`)
+      script(src=`${rootPath}assets/scripts/chi-webcomponent-icons.js`)
 
       if scripts
           each script in scripts

@@ -38,9 +38,7 @@ each size in ['default', 'small', 'large']
                   disabled=state=='disabled' ? 'disabled' : false
                 )
                   .a-btn__content
-                    .a-icon
-                      svg
-                        use(xlink:href='#icon-atom')
+                    chi-icon(img='atom')
                 button.a-btn.-m1(
                   class={
                     [`-${type}`]: type != 'solid',
@@ -51,9 +49,7 @@ each size in ['default', 'small', 'large']
                   disabled=state=='disabled' ? 'disabled' : false
                 )
                   .a-btn__content
-                    .a-icon
-                      svg
-                        use(xlink:href='#icon-atom')
+                    chi-icon(img='atom')
                     span Button
 
   if size == 'default'
@@ -68,6 +64,4 @@ each size in ['default', 'small', 'large']
               td
                 button(type="button", class=`a-btn -float -${style} -${state} -ml4 -m1`)
                   .a-btn__content
-                    .a-icon
-                      svg
-                        use(xlink:href='#icon-atom')
+                    chi-icon(img='atom')

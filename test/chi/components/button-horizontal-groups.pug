@@ -3,9 +3,7 @@ title: Horizontal button groups
 ---
 
 mixin icon(name)
-  .a-icon
-    svg
-      use(xlink:href=`#icon-${name}`)
+  chi-icon(img=name)
 
 mixin button(icon, type, style, size, modifier)
   button.a-btn(class={

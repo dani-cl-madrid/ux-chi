@@ -21,3 +21,8 @@ gulp.task('build:website:images', () => gulp.src('src/website/assets/images/**/*
   .pipe(gulp.dest('dist/assets/images'))
   .pipe(gulpPlugins.connect.reload())
 );
+
+gulp.task('build:website:sprites', () => {
+  gulp.src('src/website/assets/sprite/**/*')
+    .pipe(gulp.dest('dist/assets/sprite'));
+});

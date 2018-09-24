@@ -39,7 +39,7 @@
       &.-icons {
         & > li {
           &.-active {
-            .a-icon {
+            chi-icon {
               color: $brand-color;
             }
           }
@@ -134,7 +134,7 @@
             padding-left: 3.5rem;
             position: relative;
 
-            & > .a-icon {
+            & > chi-icon {
               left: 1.5rem;
               position: absolute;
             }
@@ -157,7 +157,7 @@
           & > a {
             position: relative;
 
-            & > .a-icon {
+            & > chi-icon {
               color: $brand-color;
               left: 1.5rem;
             }
@@ -179,7 +179,7 @@
             background-color: set-color(grey, 20);
             color: set-color(grey, 90);
 
-            & > .a-icon {
+            & > chi-icon {
               color: set-color(grey, 90);
             }
           }
@@ -223,7 +223,7 @@
             padding-bottom: 0.75rem;
             padding-top: 0.75rem;
 
-            & > .a-icon {
+            & > chi-icon {
               margin-top: 0.25rem;
             }
           }

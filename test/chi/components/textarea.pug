@@ -33,9 +33,7 @@ each size in ['default', 'small', 'large']
                     textarea(class=`a-input -${style} -${state} -${size}`, disabled) Value
                   else
                     textarea(class=`a-input -${style} -${state} -${size}`) Value
-                  .a-icon
-                    svg
-                      use(xlink:href='#icon-atom')
+                  chi-icon(img='atom')
 
   div(class=`test-${size}-icon-right`)
     span.a-h2= `Textarea / ${size} / icon right`
@@ -53,21 +51,13 @@ each size in ['default', 'small', 'large']
                   else
                     textarea(class=`a-input -${style} -${state} -${size}`) Value
                   if style == 'success'
-                    .a-icon.-textSuccess
-                      svg
-                        use(xlink:href='#icon-check')
+                    chi-icon(img='check').-textSuccess
                   else if style == 'warning'
-                    .a-icon.-textWarning
-                      svg
-                        use(xlink:href='#icon-warning')
+                    chi-icon(img='warning').-textWarning
                   else if style == 'danger'
-                    .a-icon.-textDanger
-                      svg
-                        use(xlink:href='#icon-circle-warning')
+                    .chi-icon(img='circle-warning').-textDanger
                   else
-                    .a-icon
-                      svg
-                        use(xlink:href='#icon-circle-info-outline')
+                    .chi-icon(img='circle-info-outline')
 
   div(class=`test-${size}-icon-left-right`)
     span.a-h2= `Textarea / ${size} / icon left / icon right`
@@ -84,22 +74,12 @@ each size in ['default', 'small', 'large']
                     textarea(class=`a-input -${style} -${state} -${size}`, disabled) Value
                   else
                     textarea(class=`a-input -${style} -${state} -${size}`) Value
-                  .a-icon
-                    svg
-                      use(xlink:href='#icon-atom')
+                  chi-icon(img='atom')
                   if style == 'success'
-                    .a-icon.-textSuccess
-                      svg
-                        use(xlink:href='#icon-check')
+                    chi-icon(img='check').-textSuccess
                   else if style == 'warning'
-                    .a-icon.-textWarning
-                      svg
-                        use(xlink:href='#icon-warning')
+                    chi-icon(img='warning').-textWarning
                   else if style == 'danger'
-                    .a-icon.-textDanger
-                      svg
-                        use(xlink:href='#icon-circle-warning')
+                    chi-icon(img='circle-warning').-textDanger
                   else
-                    .a-icon
-                      svg
-                        use(xlink:href='#icon-circle-info-outline')
+                    chi-icon(img='circle-info-outline')

@@ -39,19 +39,13 @@ h4 Left Aligned
   .-p3
     .a-inputWrapper.-iconLeft(style="max-width:30rem")
       textarea.a-input Sample text
-      .a-icon.-textMuted
-        svg
-          use(xlink:href='#icon-edit')
+      chi-icon(img='edit').-textMuted
   :code(lang="html")
     <div class="a-inputWrapper -iconLeft">
       <textarea class="a-input">
         Sample text
       </textarea>
-      <div class="a-icon -textMuted">
-        <svg>
-          <use xlink:href="#icon-edit"></use>
-        </svg>
-      </div>
+      <chi-icon img="edit" class="-textMuted"></chi-icon>
     </div>
 
 h4 Right Aligned
@@ -59,19 +53,13 @@ h4 Right Aligned
   .-p3
     .a-inputWrapper.-iconRight(style="max-width:30rem")
       textarea.a-input Sample text
-      .a-icon.-textMuted
-        svg
-          use(xlink:href='#icon-edit')
+      chi-icon(img='edit').-textMuted
   :code(lang="html")
     <div class="a-inputWrapper -iconRight">
       <textarea class="a-input">
         Sample text
       </textarea>
-      <div class="a-icon -textMuted">
-        <svg>
-          <use xlink:href="#icon-edit"></use>
-        </svg>
-      </div>
+      <chi-icon img="edit" class="-textMuted"></chi-icon>
     </div>
 
 h4 Left + Right Aligned
@@ -79,27 +67,15 @@ h4 Left + Right Aligned
   .-p3
     .a-inputWrapper.-iconLeft.-iconRight(style="max-width:30rem")
       textarea.a-input Sample text
-      .a-icon.-textMuted
-        svg
-          use(xlink:href='#icon-edit')
-      .a-icon.-textMuted
-        svg
-          use(xlink:href='#icon-check')
+      chi-icon(img='edit').-textMuted
+      chi-icon(img='check').-textMuted
   :code(lang="html")
     <div class="a-inputWrapper -iconLeft -iconRight">
       <textarea class="a-input">
         Sample text
       </textarea>
-      <div class="a-icon -textMuted">
-        <svg>
-          <use xlink:href="#icon-edit"></use>
-        </svg>
-      </div>
-      <div class="a-icon -textMuted">
-        <svg>
-          <use xlink:href="#icon-check"></use>
-        </svg>
-      </div>
+      <chi-icon img="edit" class="-textMuted"></chi-icon>
+      <chi-icon img="check" class="-textMuted"></chi-icon>
     </div>
 
 h3 States
@@ -122,19 +98,13 @@ h4 Success
   .-p3
     .a-inputWrapper.-iconRight(style="max-width:30rem")
       textarea.a-input.-success Sample text
-      .a-icon.-textSuccess
-        svg
-          use(xlink:href="#icon-check")
+      chi-icon(img='check').-textSuccess
   :code(lang="html")
     <div class="a-inputWrapper -iconRight">
       <textarea class="a-input -success">
         Sample text
       </textarea>
-      <div class="a-icon -textSuccess">
-        <svg>
-          <use xlink:href="#icon-check"></use>
-        </svg>
-      </div>
+      <chi-icon img="check" class="-textSuccess"></chi-icon>
     </div>
 
 h4 Warning
@@ -151,19 +121,13 @@ h4 Warning
   .-p3
     .a-inputWrapper.-iconRight(style="max-width:30rem")
       textarea.a-input.-warning Sample text
-      .a-icon.-textWarning
-        svg
-          use(xlink:href="#icon-warning")
+      chi-icon(img='warning').-textWarning
   :code(lang="html")
     <div class="a-inputWrapper -iconRight">
       <textarea class="a-input -warning">
         Sample text
       </textarea>
-      <div class="a-icon -textWarning">
-        <svg>
-          <use xlink:href="#icon-warning"></use>
-        </svg>
-      </div>
+      <chi-icon img="warning" class="-textWarning"></chi-icon>
     </div>
 
 h4 Danger
@@ -180,19 +144,13 @@ h4 Danger
   .-p3
     .a-inputWrapper.-iconRight(style="max-width:30rem")
       textarea.a-input.-danger Sample text
-      .a-icon.-textDanger
-        svg
-          use(xlink:href="#icon-circle-warning")
+      chi-icon(img='circle-warning').-textDanger
   :code(lang="html")
     <div class="a-inputWrapper -iconRight">
       <textarea class="a-input -danger">
         Sample text
       </textarea>
-      <div class="a-icon -textDanger">
-        <svg>
-          <use xlink:href="#icon-circle-warning"></use>
-        </svg>
-      </div>
+      <chi-icon img="circle-warning" class="-textDanger"></chi-icon>
     </div>
 
 h3 Additional Sizes

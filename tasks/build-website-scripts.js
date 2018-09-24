@@ -53,3 +53,17 @@ gulp.task('build:website:scripts', () => gulp.src('src/website/assets/scripts/**
   .pipe(gulp.dest('dist/assets/scripts'))
   .pipe(gulpPlugins.connect.reload())
 );
+
+
+
+
+
+
+gulp.task('build:website:dependencies', () => {
+  gulp.src('src/website/assets/libraries/**/*.js')
+    .pipe(gulp.dest('dist/assets/libraries'));
+  gulp.src('node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js')
+    .pipe(gulp.dest('dist/assets/scripts'));
+  gulp.src('node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js')
+    .pipe(gulp.dest('dist/assets/scripts'));
+});

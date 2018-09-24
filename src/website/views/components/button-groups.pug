@@ -112,19 +112,13 @@ p.-text
       button(class=`a-btn`) Button
       button(class=`a-btn -icon`)
         .a-btn__content
-          .a-icon
-            svg
-              use(xlink:href='#icon-atom')
+          chi-icon(img='atom')
   :code(lang='html')
     <div class="m-btnGroup">
       <button class="a-btn">Button</button>
       <button class="a-btn -icon">
         <div class="a-btn__content">
-          <div class="a-icon">
-            <svg>
-              <use xlink:href="#icon-atom"></use>
-            </svg>
-          </div>
+          <chi-icon img="atom"></chi-icon>
         </div>
       </button>
     </div>
@@ -138,19 +132,13 @@ p.-text
       button(class=`a-btn`) Button
       button(class=`a-btn -icon -notFluid`)
         .a-btn__content
-          .a-icon
-            svg
-              use(xlink:href='#icon-atom')
+          chi-icon(img='atom')
   :code(lang='html')
     <div class="m-btnGroup -fluid">
       <button class="a-btn">Button</button>
       <button class="a-btn -icon -notFluid">
         <div class="a-btn__content">
-          <div class="a-icon">
-            <svg>
-              <use xlink:href="#icon-atom"></use>
-            </svg>
-          </div>
+          <chi-icon img="atom"></chi-icon>
         </div>
       </button>
     </div>

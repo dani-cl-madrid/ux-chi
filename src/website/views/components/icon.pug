@@ -8,23 +8,18 @@ p.-text Chi has adopted a subset of icons from Cyclops and CenturyLink's Cloud A
 h3 Using Icons
 p.-text Icons can be added via SVG or Web Font. Choose the method that best suits your projects needs.
 
-h4 SVG & JS Method
-p.-text SVG based implementations provide better semantics, accessibility, rendering, and reliability. Place the following script in your projects footer to use this method.
+h4 SVG & Web Component Method
+p.-text SVG and Web Components based implementations provide better semantics, accessibility, rendering, and reliability. Place the following script in your projects footer to use this method.
 .-mb2
   :code(lang='html')
     <script src="https://assets.ctl.io/chi/0.8.2/chi-icons.js"></script>
-p.-text Then to render an SVG icon, apply the class <code>a-icon</code> to an element. Next, add an <code>&lt;svg&gt;</code> tag and specify the id of the icon you wish to use in the <code>&lt;svg&gt;</code>'s href:
+p.-text Then to render an SVG icon, use the chi-icon tag and specify the img you want to use.
 .example.-mb3
   .-p3
-    .a-icon
-      svg
-        use(xlink:href='#icon-logo-centurylink')
+    chi-icon(img='logo-centurylink')
+
   :code(lang="html")
-    <div class="a-icon">
-      <svg aria-hidden="true">
-        <use xlink:href='#icon-logo-centurylink'/>
-      </svg>
-    </div>
+    <chi-icon img="logo-centurylink"></chi-icon>
 
 h4 Web Font & CSS Method
 p.-text Web Font based implementations offer the widest browser support, fastest rendering speed, and require no additional script or stylesheet.
@@ -46,22 +41,20 @@ p.-text Two alternate small classes are available for specific app scenarios. Us
     .a-grid.-align-items--end
       each size in ['xs', 'sm', 'md', 'lg', 'xl', 'xxl']
         div.-p2
-          div(class=`a-icon -${size}`)
-            svg
-              use(xlink:href='#icon-logo-centurylink')
+          chi-icon(img='logo-centurylink')(class=`-${size}`)
   :code(lang="html")
     <!-- -xs : 12x12px -->
-    <div class="a-icon -xs"><svg aria-hidden="true"><use xlink:href='#icon-logo-centurylink'/></svg></div>
+    <chi-icon img="logo-centurylink" class="-xs"></chi-icon>
     <!-- -sm : 16x16px -->
-    <div class="a-icon -sm"><svg aria-hidden="true"><use xlink:href='#icon-logo-centurylink'/></svg></div>
+    <chi-icon img="logo-centurylink" class="-sm"></chi-icon>
     <!-- -md : 32x32px -->
-    <div class="a-icon -md"><svg aria-hidden="true"><use xlink:href='#icon-logo-centurylink'/></svg></div>
+    <chi-icon img="logo-centurylink" class="-md"></chi-icon>
     <!-- -lg : 64x64px -->
-    <div class="a-icon -lg"><svg aria-hidden="true"><use xlink:href='#icon-logo-centurylink'/></svg></div>
+    <chi-icon img="logo-centurylink" class="-lg"></chi-icon>
     <!-- -xl : 96x96px -->
-    <div class="a-icon -xl"><svg aria-hidden="true"><use xlink:href='#icon-logo-centurylink'/></svg></div>
+    <chi-icon img="logo-centurylink" class="-xl"></chi-icon>
     <!-- -xxl : 128x128px -->
-    <div class="a-icon -xxl"><svg aria-hidden="true"><use xlink:href='#icon-logo-centurylink'/></svg></div>
+    <chi-icon img="logo-centurylink" class="-xxl"</chi-icon>
 
 h3 Colors
 p.-text By default, icons are the same color as text. Use Chi text color utilities to set a specific color.
@@ -70,18 +63,16 @@ p.-text By default, icons are the same color as text. Use Chi text color utiliti
     .a-grid.-align-items--end
       each color in ['Base', 'Brand', 'Success', 'Warning', 'Danger', 'Info', 'Inverse', 'Muted']
         div.-p2
-          div(class=`a-icon -md -text${color}`)
-            svg
-              use(xlink:href='#icon-logo-centurylink')
+          chi-icon(img='logo-centurylink')(class=`-md -text${color}`)
   :code(lang="html")
-    <div class="a-icon -md"><svg aria-hidden="true"><use xlink:href='#icon-logo-centurylink'/></svg></div>
-    <div class="a-icon -md -textBrand"><svg aria-hidden="true"><use xlink:href='#icon-logo-centurylink'/></svg></div>
-    <div class="a-icon -md -textSuccess"><svg aria-hidden="true"><use xlink:href='#icon-logo-centurylink'/></svg></div>
-    <div class="a-icon -md -textWarning"><svg aria-hidden="true"><use xlink:href='#icon-logo-centurylink'/></svg></div>
-    <div class="a-icon -md -textDanger"><svg aria-hidden="true"><use xlink:href='#icon-logo-centurylink'/></svg></div>
-    <div class="a-icon -md -textInfo"><svg aria-hidden="true"><use xlink:href='#icon-logo-centurylink'/></svg></div>
-    <div class="a-icon -md -textInverse"><svg aria-hidden="true"><use xlink:href='#icon-logo-centurylink'/></svg></div>
-    <div class="a-icon -md -textMuted"><svg aria-hidden="true"><use xlink:href='#icon-logo-centurylink'/></svg></div>
+    <chi-icon img="logo-centurylinlk" class="-md"></chi-icon>
+    <chi-icon img="logo-centurylinlk" class="-md -textBrand"></chi-icon>
+    <chi-icon img="logo-centurylinlk" class="-md -textSuccess"></chi-icon>
+    <chi-icon img="logo-centurylinlk" class="-md -textWarning"></chi-icon>
+    <chi-icon img="logo-centurylinlk" class="-md -textDanger"></chi-icon>
+    <chi-icon img="logo-centurylinlk" class="-md -textInfo"></chi-icon>
+    <chi-icon img="logo-centurylinlk" class="-md -textInverse"></chi-icon>
+    <chi-icon img="logo-centurylinlk" class="-md -textMuted"></chi-icon>
 
 h3 Available Icons
 .a-grid.icon-library.-pt2.-pb6
@@ -89,7 +80,5 @@ h3 Available Icons
     .a-col.-w6.-xl--w2.-lg--w3.-md--w6.-mb2
       .a-card.-py4
         .a-card__content
-          .a-icon.-sm
-            svg
-              use(xlink:href=`#icon-${name}`)
-      p.-textCenter= 'icon-' + name
+          chi-icon(img=`${name}`)
+      p.-textCenter=name

@@ -84,33 +84,21 @@ p.-text
   .-p3
     button(class=`a-btn -icon -mr2`)
       .a-btn__content
-        .a-icon
-          svg
-            use(xlink:href='#icon-atom')
+        chi-icon(img='atom')
     button(class=`a-btn -icon -flat -mr2`)
       .a-btn__content
-        .a-icon
-          svg
-            use(xlink:href='#icon-atom')
+        chi-icon(img='atom')
   :code(lang='html')
     <!-- base -->
     <button class="a-btn -icon">
       <div class="a-btn__content">
-        <div class="a-icon">
-          <svg>
-            <use xlink:href="#icon-atom"></use>
-          </svg>
-        </div>
+        <chi-icon img="atom"></chi-icon>
       </div>
     </button>
     <!-- flat -->
     <button class="a-btn -icon -flat">
       <div class="a-btn__content">
-        <div class="a-icon">
-          <svg>
-            <use xlink:href="#icon-atom"></use>
-          </svg>
-        </div>
+        <chi-icon img="atom"></chi-icon>
       </div>
     </button>
 
@@ -119,34 +107,22 @@ h4 Labeled icon buttons
   .-p3
     button(class=`a-btn -mr2`)
       .a-btn__content
-        .a-icon
-          svg
-            use(xlink:href='#icon-atom')
+        chi-icon(img='atom')
         span Button
     button(class=`a-btn -mr2`)
       .a-btn__content
         span Button
-        .a-icon
-          svg
-            use(xlink:href='#icon-atom')
+        chi-icon(img='atom')
     button(class=`a-btn -mr2`)
       .a-btn__content
-        .a-icon
-          svg
-            use(xlink:href='#icon-atom')
+        chi-icon(img='atom')
         span Button
-        .a-icon
-          svg
-            use(xlink:href='#icon-atom')
+        chi-icon(img='atom')
   :code(lang='html')
     <!-- left aligned -->
     <button class="a-btn">
       <div class="a-btn__content">
-        <div class="a-icon">
-          <svg>
-            <use xlink:href="#icon-atom"></use>
-          </svg>
-        </div>
+        <chi-icon img="atom"></chi-icon>
         <span>Button</span>
       </div>
     </button>
@@ -154,27 +130,15 @@ h4 Labeled icon buttons
     <button class="a-btn">
       <div class="a-btn__content">
         <span>Button</span>
-        <div class="a-icon">
-          <svg>
-            <use xlink:href="#icon-atom"></use>
-          </svg>
-        </div>
+        <chi-icon img="atom"></chi-icon>
       </div>
     </button>
     <!-- both sides -->
     <button class="a-btn">
       <div class="a-btn__content">
-        <div class="a-icon">
-          <svg>
-            <use xlink:href="#icon-atom"></use>
-          </svg>
-        </div>
+        <chi-icon img="atom"></chi-icon>
         <span>Button</span>
-        <div class="a-icon">
-          <svg>
-            <use xlink:href="#icon-atom"></use>
-          </svg>
-        </div>
+        <chi-icon img="atom"></chi-icon>
       </div>
     </button>
 
@@ -184,53 +148,31 @@ h4 Floating icon buttons
     each type in ['base', 'brand', 'danger', 'info', 'dark']
       button(class=`a-btn -${type} -float -mr2`)
         .a-btn__content
-          .a-icon
-            svg
-              use(xlink:href="#icon-atom")
+          chi-icon(img='atom')
   :code(lang='html')
     <button class="a-btn -float">
       <div class="a-btn__content">
-        <div class="a-icon">
-          <svg>
-            <use xlink:href="#icon-atom"></use>
-          </svg>
-        </div>
+        <chi-icon img="atom"></chi-icon>
       </div>
     </button>
     <button class="a-btn -brand -float">
       <div class="a-btn__content">
-        <div class="a-icon">
-          <svg>
-            <use xlink:href="#icon-atom"></use>
-          </svg>
-        </div>
+        <chi-icon img="atom"></chi-icon>
       </div>
     </button>
     <button class="a-btn -float -danger">
       <div class="a-btn__content">
-        <div class="a-icon">
-          <svg>
-            <use xlink:href="#icon-atom"></use>
-          </svg>
-        </div>
+        <chi-icon img="atom"></chi-icon>
       </div>
     </button>
     <button class="a-btn -float -info">
       <div class="a-btn__content">
-        <div class="a-icon">
-          <svg>
-            <use xlink:href="#icon-atom"></use>
-          </svg>
-        </div>
+        <chi-icon img="atom"></chi-icon>
       </div>
     </button>
     <button class="a-btn -float -dark">
       <div class="a-btn__content">
-        <div class="a-icon">
-          <svg>
-            <use xlink:href="#icon-atom"></use>
-          </svg>
-        </div>
+        <chi-icon img="atom"></chi-icon>
       </div>
     </button>
 
@@ -241,18 +183,12 @@ h4 Small
       button(class='a-btn -small -mr1') Small
       button(class='a-btn -small -icon -mr1')
         .a-btn__content
-          .a-icon
-            svg
-              use(xlink:href='#icon-atom')
+          chi-icon(img='atom')
   :code(lang='html')
     <button class="a-btn -small">small</button>
     <button class="a-btn -small -icon">
       <div class="a-btn__content">
-        <div class="a-icon">
-          <svg>
-            <use xlink:href="#icon-atom"></use>
-          </svg>
-        </div>
+        <chi-icon img="atom"></chi-icon>
       </div>
     </button>
 
@@ -262,17 +198,11 @@ h4 Large
       button(class='a-btn -large -mr1') Large
       button(class='a-btn -large -icon -mr1')
         .a-btn__content
-          .a-icon
-            svg
-              use(xlink:href='#icon-atom')
+          chi-icon(img='atom')
   :code(lang='html')
     <button class="a-btn -large">large</button>
     <button class="a-btn -large -icon">
       <div class="a-btn__content">
-        <div class="a-icon">
-          <svg>
-            <use xlink:href="#icon-atom"></use>
-          </svg>
-        </div>
+        <chi-icon img="atom"></chi-icon>
       </div>
     </button>
