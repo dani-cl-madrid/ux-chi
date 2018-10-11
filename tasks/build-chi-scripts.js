@@ -40,7 +40,7 @@ const webpackConfig = {
 if (process.env.PRODUCTION) {
   webpackConfig.plugins = [new webpack.optimize.UglifyJsPlugin({
     comments: false,
-    sourceMap: true,
+    sourceMap: false,
     compress: {
       warnings: false,
       drop_console: false
@@ -50,7 +50,16 @@ if (process.env.PRODUCTION) {
     ]
   })];
 } else {
-  webpackConfig.devtool = 'eval';
+  webpackConfig.devtool = false;
+  webpackConfig.plugins = [new webpack.SourceMapDevToolPlugin({
+    filename: '[file].map',
+    append: null,
+    module: true,
+    columns: true,
+    lineToLine: false,
+    noSources: false,
+    namespace: ''
+  })]
 }
 
 gulp.task('build:chi:scripts', () => gulp.src(sources)
