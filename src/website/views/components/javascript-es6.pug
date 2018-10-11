@@ -1,0 +1,9 @@
+---
+title: JavaScript
+---
+p#id.-text
+  | JavaScript blah blah blah
+
+script(type="module", src=`../../chiModule.js`)
+!= '<script type="module">import {chi} from "../../chi.js"; chi.module(document.getElementById("id"), {});</script>'
+
