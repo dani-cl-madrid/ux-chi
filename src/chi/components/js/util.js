@@ -1,6 +1,7 @@
 
+console.log('util loaded');
 
-export class Util {
+export class util {
 
    static removeClass (elem, className) {
     elem.className = elem.className.split(' ').filter(function (v) {

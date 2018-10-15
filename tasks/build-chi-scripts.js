@@ -12,7 +12,8 @@ const destination = path.join(Folders.DIST, 'js');
 
 const webpackConfig = {
   output: {
-    library: 'chi'
+    library: ["chi", "[name]"], //'chi',
+    //libraryTarget: 'umd'
   },
   module: {
     rules: [
@@ -38,7 +39,7 @@ const webpackConfig = {
 };
 
 if (process.env.PRODUCTION) {
-  webpackConfig.plugins = [new webpack.optimize.UglifyJsPlugin({
+  webpackConfig.plugins.push(new webpack.optimize.UglifyJsPlugin({
     comments: false,
     sourceMap: false,
     compress: {
@@ -48,7 +49,7 @@ if (process.env.PRODUCTION) {
     exclude: [
       /node_modules\//
     ]
-  })];
+  }));
 } else {
   webpackConfig.devtool = false;
   webpackConfig.plugins = [new webpack.SourceMapDevToolPlugin({

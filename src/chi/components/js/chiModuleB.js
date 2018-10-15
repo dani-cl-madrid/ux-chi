@@ -1,11 +1,11 @@
 import {util} from "./util.js";
 import {chi} from "./chi.js";
 
-console.log("chiModule loaded");
+console.log("chiModuleB loaded");
 
 util.addClass(document.getElementById("id"), "class");
 
-const className = 'chiModule';
+const className = 'chiModuleb';
 
 
 function _initModule() {
@@ -29,4 +29,7 @@ class ChiModule {
 
 }
 
-chi.module = ChiModule.initModule();
+
+let alert = ChiModule.initModule;
+
+export {alert};
