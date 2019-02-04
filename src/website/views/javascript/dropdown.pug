@@ -26,30 +26,29 @@ p.-text
     </div>
     <script>chi.dropdown(document.getElementById('dropdown-1'));</script>
 
-- var imagesRoute = '../../assets/images/flags/';
 - var i = 0;
 -
   var flags = [
-    {file: 'AR.png', title: 'Argentina'},
-    {file: 'AU.png', title: 'Australia'},
-    {file: 'BR.png', title: 'Brazil'},
-    {file: 'CA.png', title: 'Canada - English'},
-    {file: 'CA.png', title: 'Canada - French'},
-    {file: 'CL.png', title: 'Chile'},
-    {file: 'CO.png', title: 'Columbia'},
-    {file: 'CR.png', title: 'Costa Rica'},
-    {file: 'EC.png', title: 'Ecuador'},
-    {file: 'DE.png', title: 'Germany'},
-    {file: 'HK.png', title: 'Hong Kong - Chinese'},
-    {file: 'HK.png', title: 'Hong Kong - English'},
-    {file: 'JP.png', title: 'Japan'},
-    {file: 'MX.png', title: 'Mexico'},
-    {file: 'PA.png', title: 'Panama'},
-    {file: 'PE.png', title: 'Peru'},
-    {file: 'SG.png', title: 'Singapore'},
-    {file: 'GB.png', title: 'United Kingdom'},
-    {file: 'US.png', title: 'United States'},
-    {file: 'VE.png', title: 'Venezuela'}
+    {icon: 'icon-atom', title: 'Argentina'},
+    {icon: 'icon-atom', title: 'Australia'},
+    {icon: 'icon-atom', title: 'Brazil'},
+    {icon: 'icon-atom', title: 'Canada - English'},
+    {icon: 'icon-atom', title: 'Canada - French'},
+    {icon: 'icon-atom', title: 'Chile'},
+    {icon: 'icon-atom', title: 'Columbia'},
+    {icon: 'icon-atom', title: 'Costa Rica'},
+    {icon: 'icon-atom', title: 'Ecuador'},
+    {icon: 'icon-atom', title: 'Germany'},
+    {icon: 'icon-atom', title: 'Hong Kong - Chinese'},
+    {icon: 'icon-atom', title: 'Hong Kong - English'},
+    {icon: 'icon-atom', title: 'Japan'},
+    {icon: 'icon-atom', title: 'Mexico'},
+    {icon: 'icon-atom', title: 'Panama'},
+    {icon: 'icon-atom', title: 'Peru'},
+    {icon: 'icon-atom', title: 'Singapore'},
+    {icon: 'icon-atom', title: 'United Kingdom'},
+    {icon: 'icon-atom', title: 'United States'},
+    {icon: 'icon-atom', title: 'Venezuela'}
   ];
 
 h4 International/language flags example
@@ -58,56 +57,53 @@ h4 International/language flags example
     .m-dropdown
       button.a-btn.-icon.-flat.m-dropdown__trigger(data-target="#flags", data-position='bottom')
         .a-btn__content
-          .a-icon
-            img.-w--100.-h--auto(src=imagesRoute + flags[18].file, alt=flags[18].title)
+          i.a-icon.-sm(class=flags[18].icon)
       .m-dropdown__menu#flags
         .-d--flex
           div
             while i < flags.length/2
               a.m-dropdown__menu-item(href='')
-                img.-mr--2(src=imagesRoute + flags[i].file, alt=flags[i].title, style="width: 1rem; height: auto;")
+                i.a-icon.-sm(class=flags[i].icon)
                 = flags[i].title
               - i++;
           div
             while i < flags.length
               a.m-dropdown__menu-item(href='')
-                img.-mr--2(src=imagesRoute + flags[i].file, alt=flags[i].title, style="width: 1rem; height: auto;")
+                i.a-icon.-sm(class=flags[i].icon)
                 = flags[i].title
               - i++;
   :code(lang="html")
     <div class="m-dropdown">
-      <button class="a-btn -icon -flat m-dropdown__trigger" data-target="#flags" data-position="bottom">
+      <button class="a-btn -icon -flat m-dropdown__trigger -hasActive" data-target="#flags" data-position="bottom">
         <div class="a-btn__content">
-          <div class="a-icon">
-            <img class="-w--100 -h--auto" src="../../assets/images/flags/US.png" alt="United States">
-          </div>
+          <i class="a-icon -sm icon-atom"></i>
         </div>
       </button>
-      <div class="m-dropdown__menu" id="flags">
+      <div class="m-dropdown__menu" id="flags" x-placement="bottom" style="position: absolute; will-change: transform; top: 0px; transform: translate3d(28px, 32px, 0px);">
         <div class="-d--flex">
           <div>
-            <a class="m-dropdown__menu-item" href="#"><img class="-mr--2" src="../../assets/images/flags/AR.png" alt="Argentina" style="width: 1rem; height: auto;">Argentina</a>
-            <a class="m-dropdown__menu-item" href="#"><img class="-mr--2" src="../../assets/images/flags/AU.png" alt="Australia" style="width: 1rem; height: auto;">Australia</a>
-            <a class="m-dropdown__menu-item" href="#"><img class="-mr--2" src="../../assets/images/flags/BR.png" alt="Brazil" style="width: 1rem; height: auto;">Brazil</a>
-            <a class="m-dropdown__menu-item" href="#"><img class="-mr--2" src="../../assets/images/flags/CA.png" alt="Canada - English" style="width: 1rem; height: auto;">Canada - English</a>
-            <a class="m-dropdown__menu-item" href="#"><img class="-mr--2" src="../../assets/images/flags/CA.png" alt="Canada - French" style="width: 1rem; height: auto;">Canada - French</a>
-            <a class="m-dropdown__menu-item" href="#"><img class="-mr--2" src="../../assets/images/flags/CL.png" alt="Chile" style="width: 1rem; height: auto;">Chile</a>
-            <a class="m-dropdown__menu-item" href="#"><img class="-mr--2" src="../../assets/images/flags/CO.png" alt="Columbia" style="width: 1rem; height: auto;">Columbia</a>
-            <a class="m-dropdown__menu-item" href="#"><img class="-mr--2" src="../../assets/images/flags/CR.png" alt="Costa Rica" style="width: 1rem; height: auto;">Costa Rica</a>
-            <a class="m-dropdown__menu-item" href="#"><img class="-mr--2" src="../../assets/images/flags/EC.png" alt="Ecuador" style="width: 1rem; height: auto;">Ecuador</a>
-            <a class="m-dropdown__menu-item" href="#"><img class="-mr--2" src="../../assets/images/flags/DE.png" alt="Germany" style="width: 1rem; height: auto;">Germany</a>
+            <a class="m-dropdown__menu-item" href="#"><i class="a-icon -sm icon-atom"></i>Argentina</a>
+            <a class="m-dropdown__menu-item" href="#"><i class="a-icon -sm icon-atom"></i>Australia</a>
+            <a class="m-dropdown__menu-item" href="#"><i class="a-icon -sm icon-atom"></i>Brazil</a>
+            <a class="m-dropdown__menu-item" href="#"><i class="a-icon -sm icon-atom"></i>Canada - English</a>
+            <a class="m-dropdown__menu-item" href="#"><i class="a-icon -sm icon-atom"></i>Canada - French</a>
+            <a class="m-dropdown__menu-item" href="#"><i class="a-icon -sm icon-atom"></i>Chile</a>
+            <a class="m-dropdown__menu-item" href="#"><i class="a-icon -sm icon-atom"></i>Columbia</a>
+            <a class="m-dropdown__menu-item" href="#"><i class="a-icon -sm icon-atom"></i>Costa Rica</a>
+            <a class="m-dropdown__menu-item" href="#"><i class="a-icon -sm icon-atom"></i>Ecuador</a>
+            <a class="m-dropdown__menu-item" href="#"><i class="a-icon -sm icon-atom"></i>Germany</a>
           </div>
           <div>
-            <a class="m-dropdown__menu-item" href="#"><img class="-mr--2" src="../../assets/images/flags/HK.png" alt="Hong Kong - Chinese" style="width: 1rem; height: auto;">Hong Kong - Chinese</a>
-            <a class="m-dropdown__menu-item" href="#"><img class="-mr--2" src="../../assets/images/flags/HK.png" alt="Hong Kong - English" style="width: 1rem; height: auto;">Hong Kong - English</a>
-            <a class="m-dropdown__menu-item" href="#"><img class="-mr--2" src="../../assets/images/flags/JP.png" alt="Japan" style="width: 1rem; height: auto;">Japan</a>
-            <a class="m-dropdown__menu-item" href="#"><img class="-mr--2" src="../../assets/images/flags/MX.png" alt="Mexico" style="width: 1rem; height: auto;">Mexico</a>
-            <a class="m-dropdown__menu-item" href="#"><img class="-mr--2" src="../../assets/images/flags/PA.png" alt="Panama" style="width: 1rem; height: auto;">Panama</a>
-            <a class="m-dropdown__menu-item" href="#"><img class="-mr--2" src="../../assets/images/flags/PE.png" alt="Peru" style="width: 1rem; height: auto;">Peru</a>
-            <a class="m-dropdown__menu-item" href="#"><img class="-mr--2" src="../../assets/images/flags/SG.png" alt="Singapore" style="width: 1rem; height: auto;">Singapore</a>
-            <a class="m-dropdown__menu-item" href="#"><img class="-mr--2" src="../../assets/images/flags/GB.png" alt="United Kingdom" style="width: 1rem; height: auto;">United Kingdom</a>
-            <a class="m-dropdown__menu-item" href="#"><img class="-mr--2" src="../../assets/images/flags/US.png" alt="United States" style="width: 1rem; height: auto;">United States</a>
-            <a class="m-dropdown__menu-item" href="#"><img class="-mr--2" src="../../assets/images/flags/VE.png" alt="Venezuela" style="width: 1rem; height: auto;">Venezuela</a>
+            <a class="m-dropdown__menu-item" href="#"><i class="a-icon -sm icon-atom"></i>Hong Kong - Chinese</a>
+            <a class="m-dropdown__menu-item" href="#"><i class="a-icon -sm icon-atom"></i>Hong Kong - English</a>
+            <a class="m-dropdown__menu-item" href="#"><i class="a-icon -sm icon-atom"></i>Japan</a>
+            <a class="m-dropdown__menu-item" href="#"><i class="a-icon -sm icon-atom"></i>Mexico</a>
+            <a class="m-dropdown__menu-item" href="#"><i class="a-icon -sm icon-atom"></i>Panama</a>
+            <a class="m-dropdown__menu-item" href="#"><i class="a-icon -sm icon-atom"></i>Peru</a>
+            <a class="m-dropdown__menu-item" href="#"><i class="a-icon -sm icon-atom"></i>Singapore</a>
+            <a class="m-dropdown__menu-item" href="#"><i class="a-icon -sm icon-atom"></i>United Kingdom</a>
+            <a class="m-dropdown__menu-item" href="#"><i class="a-icon -sm icon-atom"></i>United States</a>
+            <a class="m-dropdown__menu-item" href="#"><i class="a-icon -sm icon-atom"></i>Venezuela</a>
           </div>
         </div>
       </div>
