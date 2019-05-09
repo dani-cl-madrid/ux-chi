@@ -174,6 +174,64 @@ onLoad(() => {
     enableCopyToClipboardFeature(codeSnippet);
   });
 
+  // Order checkout flow template
+  const numbers = [1,2,3,4,5,6];
+  Array.prototype.forEach.call(numbers, function(number) {
+    let card = document.getElementById(number);
+    let input = document.getElementById('input-number-' + number);
+    let quantityInit = document.getElementById('quantityInit');
+    let quantity = document.getElementById('quantity');
+    let equipment= document.getElementById('equipment');
+    card.style.cursor = 'pointer';
+    let cart = document.getElementById('cart');
+    let empty = document.getElementById('empty');
+    let location = document.getElementById('location');
+    let locations = document.getElementById('locations');
+    let locationTab = document.getElementById('locationTab');
+    let locationActiveTab = document.getElementById('locationActiveTab');
+    location.onclick = function(evt) {
+      evt.preventDefault();
+      locationActiveTab.style.display = 'none';
+      addClass(locationActiveTab, '-d--none');
+      addClass(locations, '-d--block');
+      removeClass(locationTab, '-d--none');
+      locationTab.style.display = 'inline-block';
+      addClass(locationTab, '-active -d--block -bg--grey-20');
+    };
+    card.onclick = function(evt) {
+      evt.preventDefault();
+      if ( card.classList.contains('-active')) {
+        if (input.value === '0') {
+          removeClass(card, '-active');
+          if ( card.id < '5') {
+            removeClass(cart, '-d--block');
+            removeClass(empty, '-d--block');
+            quantityInit.style.display = 'block';
+            quantity.style.display = 'none';
+          } else if ( card.id > '4') {
+            equipment.style.display = 'none';
+          }
+        }
+      } else if ( card.id > '4') {
+        input.value++;
+        addClass(card, '-active');
+        addClass(cart, '-d--block');
+        quantityInit.style.display = 'none';
+        quantity.style.display = 'block';
+        equipment.style.display = 'block';
+      } else  {
+        input.value++;
+        input.dispatchEvent(new Event('change'));
+        addClass(card, '-active');
+        addClass(cart, '-d--block');
+        removeClass(empty, '-d--block');
+        addClass(empty, '-d--none');
+        quantityInit.style.display = 'none';
+        quantity.style.display = 'block';
+      }
+    };
+  });
+
   chi.dropdown(document.getElementById('version-dropdown'));
   chi.tab(
     document.querySelector('.docs-body__aside > nav > ul'),

@@ -19,12 +19,11 @@ html(lang="en")
 
         section.docs-body
           include partials/aside
-
-          if (title == 'Pricing')
+          if (title == 'Pricing' || title == 'Order Checkout Flow')
 
             .docs-body__content
-              .a-grid__container.-fullpage
-                h2.-ml--3= title
+              .a-grid__container.-fullpage(style='min-width:1160px; width:100%')
+                h2= title
                 != contents
 
           else
