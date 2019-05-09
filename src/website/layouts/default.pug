@@ -18,7 +18,16 @@ html(lang="en")
         include partials/header
 
         section.docs-body
-            include partials/aside
+          include partials/aside
+
+          if (title == 'Pricing')
+
+            .docs-body__content
+              .a-grid__container.-fullpage
+                h2.-ml--3= title
+                != contents
+
+          else
 
             .docs-body__content
               .a-grid__container
@@ -30,5 +39,5 @@ html(lang="en")
       script(src=`${rootPath}chi-icons.js`)
 
       if scripts
-          each script in scripts
-              script(type="text/javascript", src=`${rootPath}${script}.js`)
+        each script in scripts
+          script(type="text/javascript", src=`${rootPath}${script}.js`)
