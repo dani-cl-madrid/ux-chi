@@ -1,0 +1,26 @@
+.example.-mb--3.-bg--grey-10
+  header.o-header.-inverse
+    .o-header__content
+      a.a-brand(href="#", aria-label="CenturyLink")
+        img(src="https://assets.ctl.io/images/centurylink-logo-inverse.svg", alt="CenturyLink")
+      .o-header__start
+        span.o-header__title.-text--muted Engage
+      .o-header__end
+        .m-dropdown.-mr--1
+          button.a-btn.-flat.-inverse.-px--1.m-dropdown__trigger(data-position='bottom-end', id='support') Support
+          .m-dropdown__menu(style='width:10rem;')
+            a.m-dropdown__menu-item.-active(href='#') link 1
+            a.m-dropdown__menu-item(href='#') link 2
+            a.m-dropdown__menu-item(href='#') link 3
+        div
+          .a-avatar.-sm--3.-inverse
+            i(class='a-icon icon-user')
+        .m-dropdown.-mr--1
+          button.a-btn.-flat.-inverse.-px--1.m-dropdown__trigger(data-position='bottom-end', id='user') Tim Anderson
+          .m-dropdown__menu(style='width:10rem;')
+            a.m-dropdown__menu-item.-active(href='#') link 1
+            a.m-dropdown__menu-item(href='#') link 2
+            a.m-dropdown__menu-item(href='#') link 3
+  div.-d--flex
+    block engageContent
+
