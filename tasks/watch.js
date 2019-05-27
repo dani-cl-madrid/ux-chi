@@ -1,6 +1,6 @@
 import gulp from 'gulp';
 
-const watchOptions = { usePolling: true, interval: 500 };
+const watchOptions = { };
 
 export const serveAndWatch = gulp.parallel(
   'serve',
@@ -75,10 +75,24 @@ export const serveAndWatch = gulp.parallel(
     )
   ),
   () => gulp.watch(
-    'src/custom-elements/dist/**/*',
+    'src/website/views/**/*',
     watchOptions,
-    gulp.src('src/custom-elements/dist/**/*')
-      .pipe(gulp.dest('dist/js/ce'))
+    gulp.series(
+      'serve:notify:start',
+      'build:website:views',
+      'serve:notify:end',
+      'serve:reload'
+    )
+  ),
+  () => gulp.watch(
+    'test/**/*.pug',
+    watchOptions,
+    gulp.series(
+      'serve:notify:start',
+      'build:test',
+      'serve:notify:end',
+      'serve:reload'
+    )
   )
 );
 
